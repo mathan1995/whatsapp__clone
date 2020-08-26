@@ -16,8 +16,8 @@
 .sidebarChat__info > h2 {
   font-size: 16px;
   margin-bottom: 8px;
-  color: gray;
+  color: #313131;
 }
 .sidebarChat__info > p {
-  color: gray;
+  color: #808080;
 }
