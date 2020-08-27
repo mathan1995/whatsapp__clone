@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import './Chat.css';
 import { Avatar, IconButton } from '@material-ui/core';
 import {
@@ -8,12 +9,24 @@ import {
   InsertEmoticonOutlined,
 } from '@material-ui/icons';
 import MicIcon from '@material-ui/icons/Mic';
+import db from '../Firebase/firebase';
 function Chat() {
   const [seed, setSeed] = useState('');
   const [input, setInput] = useState('');
+  const [roomname, setRoomName] = useState('');
+  const { roomId } = useParams();
+
+  useEffect(() => {
+    if (roomId) {
+      db.collection('rooms')
+        .doc(roomId)
+        .onSnapshot((snapshot) => setRoomName(snapshot.data().name));
+    }
+  }, [roomId]);
+
   useEffect(() => {
     setSeed(Math.floor(Math.random() * 5000));
-  }, []);
+  }, [roomId]);
 
   const sendMessage = (e) => {
     e.preventDefault();
@@ -27,7 +40,7 @@ function Chat() {
         <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`} />
 
         <div className="chat__headerInfo">
-          <h2>Room name</h2>
+          <h2>{roomname}</h2>
           <p>last seen at..</p>
         </div>
         <div className="chat__headerRight">
