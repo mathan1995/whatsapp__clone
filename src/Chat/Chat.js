@@ -7,6 +7,7 @@ import {
   MoreVert,
   SearchOutlined,
   InsertEmoticonOutlined,
+  DoneAll,
 } from '@material-ui/icons';
 import MicIcon from '@material-ui/icons/Mic';
 import db from '../Firebase/firebase';
@@ -19,6 +20,12 @@ function Chat() {
   const [roomname, setRoomName] = useState('');
   const [messages, setMessages] = useState([]);
   const { roomId } = useParams();
+
+  // For capatilization
+  const capitalize = (s) => {
+    if (typeof s !== 'string') return '';
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  };
 
   useEffect(() => {
     if (roomId) {
@@ -58,7 +65,12 @@ function Chat() {
 
         <div className="chat__headerInfo">
           <h2>{roomname}</h2>
-          <p>last seen at..</p>
+          <p>
+            last seen{' '}
+            {new Date(
+              messages[messages.length - 1]?.timestamp?.toDate()
+            ).toUTCString()}
+          </p>
         </div>
         <div className="chat__headerRight">
           <IconButton>
@@ -84,10 +96,11 @@ function Chat() {
               message.name === user.displayName && 'chat__receiver'
             }`}
           >
-            <span className="chat__name">{message.name}</span>
-            {message.message}
+            <span className="chat__name">{capitalize(message.name)}</span>
+            {capitalize(message.message)}
             <span className="chat__timestamp">
               {new Date(message.timestamp?.toDate()).toUTCString()}
+              <DoneAll />
             </span>
           </p>
         ))}
@@ -97,7 +110,7 @@ function Chat() {
 
       <div className="chat__footer">
         <InsertEmoticonOutlined />
-        <form>
+        <form action="/">
           <input
             placeholder="Type a message"
             value={input}

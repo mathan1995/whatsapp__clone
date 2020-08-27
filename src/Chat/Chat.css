@@ -38,7 +38,16 @@
   background-repeat: repeat;
   background-position: center;
   padding: 30px;
-  overflow-y: hidden;
+  overflow-y: scroll;
+}
+.chat__timestamp > .MuiSvgIcon-root {
+  display: flex;
+  align-items: flex-end;
+  float: right;
+  margin-left: 10px;
+  top: -15px;
+  font-size: 14px !important;
+  color: #00b7ff !important;
 }
 
 .chat__message {
@@ -94,4 +103,24 @@
 .chat__footer > .MuiSvgIcon-root {
   padding: 10px;
   color: gray;
+}
+
+html {
+  --scrollbarBG: #ffffff00;
+  --thumbBG: #a3a2a2;
+}
+.chat__body::-webkit-scrollbar {
+  width: 6px;
+}
+.chat__body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+.chat__body::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+.chat__body::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 6px;
+  border: 1px solid var(--scrollbarBG);
 }
