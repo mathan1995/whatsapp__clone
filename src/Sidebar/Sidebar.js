@@ -7,9 +7,11 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import SearchOutlined from '@material-ui/icons/SearchOutlined';
 import SidebarChat from '../SidebarChat/';
 import db from '../Firebase/firebase';
+import { useStateValue } from '../StateProvider';
 
 function Sidebar() {
   const [rooms, setRooms] = useState([]);
+  const [{ user }] = useStateValue();
   useEffect(() => {
     const unsubscribe = db.collection('rooms').onSnapshot((snapshot) =>
       setRooms(
@@ -28,18 +30,16 @@ function Sidebar() {
     <div className="sidebar">
       <div className="sidebar__header">
         {/* Sidebar header here  */}
-        <Avatar />
+        <Avatar src={user?.photoURL} />
 
         {/* Sidebar header Right */}
         <div className="sidebar__hearderRight">
           <IconButton>
             <DonutLargeIcon />
           </IconButton>
-
           <IconButton>
             <ChatIcon />
           </IconButton>
-
           <IconButton>
             <MoreVertIcon />
           </IconButton>
