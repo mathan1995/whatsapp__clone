@@ -1,4 +1,4 @@
-### `Hope this project make scence , Google-login-auth and Realtime-database && and firebase act as every diav `
+### ` Hope this project make scence , Google-login-auth and Realtime-database && and firebase act as every diav `
 
 ## Whatsapp cloned project
 
