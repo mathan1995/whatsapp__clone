@@ -2,12 +2,11 @@
 
 ## Whatsapp cloned project
 
-![image](https://user-images.githubusercontent.com/30531450/91549638-df340e00-e944-11ea-9725-6e8b5692cd4e.png)
-
-
 ### Tech Stack
 
 In the project directory, you can run:
+![image](https://user-images.githubusercontent.com/30531450/91549638-df340e00-e944-11ea-9725-6e8b5692cd4e.png)
+
 
 ### `npm start`
 
