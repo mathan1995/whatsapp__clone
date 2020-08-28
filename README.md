@@ -17,4 +17,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### `Snaps`
 ![image](https://user-images.githubusercontent.com/30531450/91548649-4ea8fe00-e943-11ea-8fbe-e68de7c56592.png)
+
 ![image](https://user-images.githubusercontent.com/30531450/91548899-c0814780-e943-11ea-9184-1c2fcf409258.png)
+
+![image](https://user-images.githubusercontent.com/30531450/91550186-c9731880-e945-11ea-8cf4-4b8101a26a65.png)
