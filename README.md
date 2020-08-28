@@ -2,8 +2,7 @@
 
 ## Whatsapp cloned project
 
-![image](https://user-images.githubusercontent.com/30531450/91549125-135aff00-e944-11ea-8923-1c4f9ff4b3c0.png)
-![image](https://user-images.githubusercontent.com/30531450/91549165-24a40b80-e944-11ea-85c3-6cd41d6fd2ef.png)
+![image](https://user-images.githubusercontent.com/30531450/91549638-df340e00-e944-11ea-9725-6e8b5692cd4e.png)
 
 
 ### Tech Stack
